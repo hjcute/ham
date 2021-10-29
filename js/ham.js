@@ -8,6 +8,8 @@ $(function(){
     var myH = '';
     var setHam = 'wert';
 
+    $('.ham_wrap .hj_burger').css({'background-image': 'url(./img/hj_' + Math.floor(Math.random() * 5) + '.jpg)'});
+
     function timeR(){
         hamTimer = setInterval(function(){
             
