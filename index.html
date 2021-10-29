@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+
+            
+            var setTime = 30;
+            var setScore = 0;
+            var hamTimer = "";
+            var hamW = '';
+            var myH = '';
+            var setHam = 'wert';
+
+            function timeR(){
+                hamTimer = setInterval(function(){
+                    
+                    setTime--;
+                    
+                    $('.time').text(setTime);
+
+                    if(setTime <= 0){
+                        gameEnd();
+                    }
+
+                    if(setScore == 0){
+                        setHam = 'wert';
+                    }else if(setScore < 5){
+                        setHam = 'werta';
+                    }else if(setScore < 10){
+                        setHam = 'wertas';
+                    }else if(setScore < 15){
+                        setHam = 'wertresd';
+                    }else if(setScore < 20){
+                        setHam = 'wertresdf';
+                    }else if(setScore < 30){
+                        setHam = 'wertresdfg';
+                    }else if(setScore < 40){
+                        setHam = 'wertresdfgz';
+                    }else if(setScore < 50){
+                        setHam = 'wertresdfgzx';
+                    }else if(setScore < 60){
+                        setHam = 'wertresdfgzxc';
+                    }
+
+
+                }, 1000);
+            }
+            
+            function randomHam(){
+                var hamQ = '';
+                var hamG = setHam;
+                myH = '';
+                
+                for(var i=0; i<6; i++){
+                    hamQ += hamG.charAt(Math.floor(Math.random()* hamG.length));
+                }
+
+                hamW = 'q' + hamQ + 'q';
+
+                $('.my').text(hamW);
+                hjBurger(hamW);
+
+            }
+                   
+            function hjBurger(h){
+                var hjH = h.split('');
+
+                for(var i = 0; i < 8; i++){
+                    $('.hj_burger .hamburger').prepend("<div class="+hjH[i]+">"+"</div>");
+                }
+                
+            }
+
+
+            
+
+            $('.btn_wrap button').on('click', function(){
+
+                if($('.bottom_wrap .hamburger > div').length < 8){
+                    if($(this).hasClass('q')){
+                        myH = myH.concat('q');
+                        $('.bottom_wrap .hamburger').prepend('<div class="q"></div>');
+                    }else if($(this).hasClass('w')){
+                        myH = myH.concat('w');
+                        $('.bottom_wrap .hamburger').prepend('<div class="w"></div>');
+                    }else if($(this).hasClass('e')){
+                        myH = myH.concat('e');
+                        $('.bottom_wrap .hamburger').prepend('<div class="e"></div>');
+                    }else if($(this).hasClass('r')){
+                        myH = myH.concat('r');
+                        $('.bottom_wrap .hamburger').prepend('<div class="r"></div>');
+                    }else if($(this).hasClass('t')){
+                        myH = myH.concat('t');
+                        $('.bottom_wrap .hamburger').prepend('<div class="t"></div>');
+                    }else if($(this).hasClass('a')){
+                        myH = myH.concat('a');
+                        $('.bottom_wrap .hamburger').prepend('<div class="a"></div>');
+                    }else if($(this).hasClass('s')){
+                        myH = myH.concat('s');
+                        $('.bottom_wrap .hamburger').prepend('<div class="s"></div>');
+                    }else if($(this).hasClass('d')){
+                        myH = myH.concat('d');
+                        $('.bottom_wrap .hamburger').prepend('<div class="d"></div>');
+                    }else if($(this).hasClass('f')){
+                        myH = myH.concat('f');
+                        $('.bottom_wrap .hamburger').prepend('<div class="f"></div>');
+                    }else if($(this).hasClass('g')){
+                        myH = myH.concat('g');
+                        $('.bottom_wrap .hamburger').prepend('<div class="g"></div>');
+                    }else if($(this).hasClass('z')){
+                        myH = myH.concat('z');
+                        $('.bottom_wrap .hamburger').prepend('<div class="z"></div>');
+                    }else if($(this).hasClass('x')){
+                        myH = myH.concat('x');
+                        $('.bottom_wrap .hamburger').prepend('<div class="x"></div>');
+                    }else if($(this).hasClass('c')){
+                        myH = myH.concat('c');
+                        $('.bottom_wrap .hamburger').prepend('<div class="c"></div>');
+                    }
+                }else{
+                    alert('버거가 터지려고 합니다.');
+                }
+                
+                
+       
+
+
+            });
+
+            $('.ok').on('click', function(){
+
+                $('.hamburger').html('');
+                
+
+                if(hamW == myH){
+                    hamO();
+                    randomHam();
+                }else{
+                    hamX();
+                    randomHam();
+                }
+            })
+           
+
+            function hamO(){
+                setTime = setTime + 5;
+                setScore = setScore + 1;
+                
+                $('.score').text(setScore);
+            }
+
+            function hamX(){
+                setTime = setTime - 3;                
+            }
+
+            function gameEnd(){
+                clearInterval(hamTimer);
+                setScore = 0;
+                alert('점수'+ $('.score').text());
+            }
+            
+            randomHam();
+            timeR();
+        })
+    </script>
+</head>
+<body>
+    <div class="ham_wrap">
+        <div class="time">30</div>
+        <div class="score">0</div>
+        <div class="hj_burger">
+            <div class="hamburger"></div>
+        </div>
+        <div class="bottom_wrap">
+            <div class="hamburger">
+
+            </div>
+            <button class="ok">완성</button>
+            <div class="btn_wrap">
+                <button class="q">빵</button>
+                <button class="w">치즈</button>
+                <button class="e">패티</button>
+                <button class="r">버섯</button>
+                <button class="t">소스</button>
+                <button class="a">양상추</button>
+                <button class="s">토마토</button>
+                <button class="d">양파</button>
+                <button class="f">피클</button>
+                <button class="g">새우</button>
+                <button class="z">치킨</button>
+                <button class="x">베이컨</button>
+                <button class="c">모짜렐라치즈</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
