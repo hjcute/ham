@@ -80,6 +80,8 @@ $(function(){
 
     $('.btn_wrap button').on('click', function(){
 
+        clickPlay();
+
         if($('.bottom_wrap .hamburger > div').length < 9){
             if($(this).hasClass('q')){
                 myH = myH.concat('q');
@@ -143,6 +145,7 @@ $(function(){
     $('.ok').on('click', function(){
 
         $('.hamburger').html('');
+        clearPlay();
         
 
         if(hamW == myH){
@@ -180,5 +183,19 @@ $(function(){
         randomHam();
         timeR();
     });
+
+    function clearPlay() { 
+        var audio = document.getElementById('clear');
+        audio.currentTime=0;
+        audio.play(); 
+
+    }
+
+    function clickPlay() { 
+        var audio = document.getElementById('click'); 
+        audio.currentTime=0;
+        audio.play(); 
+
+    } 
     
 })
