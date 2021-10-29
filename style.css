@@ -98,16 +98,14 @@ button {
 .ham_wrap .hj_burger .heart,
 .ham_wrap .hj_burger .sad {
     position: absolute;
-    top: 55%;
-    left: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
     font-size: 40px;
     opacity: 0;
 }
 
-.ham_wrap .hj_burger .sad {
-    top: 30%;
-    left: 80%;
-}
 
 .ham_wrap .hj_burger .heart.active,
 .ham_wrap .hj_burger .sad.active {
@@ -129,8 +127,10 @@ button {
 
 .ham_wrap .hj_burger .hamburger {
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,0.7);
 }
 
 
