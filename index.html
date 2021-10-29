@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
     <script src="./jquery-1.7.2.js"></script>
     <script>
         $(function(){
 
             
-            var setTime = 30;
+            var setTime = 10;
             var setScore = 0;
             var hamTimer = "";
             var hamW = '';
@@ -40,16 +40,18 @@
                         setHam = 'wertresd';
                     }else if(setScore < 20){
                         setHam = 'wertresdf';
-                    }else if(setScore < 30){
+                    }else if(setScore < 25){
                         setHam = 'wertresdfg';
-                    }else if(setScore < 40){
+                    }else if(setScore < 30){
                         setHam = 'wertresdfgz';
-                    }else if(setScore < 50){
+                    }else if(setScore < 35){
                         setHam = 'wertresdfgzx';
-                    }else if(setScore < 60){
+                    }else if(setScore < 40){
                         setHam = 'wertresdfgzxc';
                     }
 
+                    $('.ham_wrap .hj_burger .heart').removeClass('active');
+                    $('.ham_wrap .hj_burger .sad').removeClass('active');
 
                 }, 1000);
             }
@@ -66,7 +68,7 @@
                 hamW = 'q' + hamQ + 'q';
 
                 $('.my').text(hamW);
-                hjBurger(hamW);
+                hjBurger(hamW);               
 
             }
                    
@@ -154,29 +156,56 @@
                 setTime = setTime + 5;
                 setScore = setScore + 1;
                 
+                $('.ham_wrap .hj_burger .heart').addClass('active');
                 $('.score').text(setScore);
             }
 
             function hamX(){
-                setTime = setTime - 3;                
+                $('.ham_wrap .hj_burger .sad').addClass('active');
+                setTime = setTime - 3;            
             }
 
             function gameEnd(){
                 clearInterval(hamTimer);
                 setScore = 0;
-                alert('점수'+ $('.score').text());
+                $('.end .last').text($('.score').text());
+                $('.end').css('display', 'flex');
             }
+
+            $('.btn_start').on('click', function(){
+                $('.start').hide();
+                randomHam();
+                timeR();
+            });
             
-            randomHam();
-            timeR();
         })
     </script>
 </head>
 <body>
     <div class="ham_wrap">
-        <div class="time">30</div>
+        <div class="start">
+            <p class="intro">
+                더쿠 이호정 독방 신혼집<br/><br/>
+                얼렁뚱땅 여보 햄버거 만들어주기🍔🥰
+            </p>
+            <img src="./img/intro.jpg" alt="재료설명서"> 
+            <button class="btn_start">시작하기</button>
+        </div>
+        <div class="time">10</div>
         <div class="score">0</div>
         <div class="hj_burger">
+            <div class="heart">
+                <div>🥰</div>
+                <div>😍</div>
+                <div>😘</div>
+                <div>🤩</div>
+            </div>
+            <div class="sad">
+                <div>😅</div>
+                <div>😥</div>
+                <div>😕</div>
+                <div>😩</div>
+            </div>
             <div class="hamburger"></div>
         </div>
         <div class="bottom_wrap">
@@ -188,9 +217,9 @@
                 <button class="q">빵</button>
                 <button class="w">치즈</button>
                 <button class="e">패티</button>
-                <button class="r">버섯</button>
+                <button class="r">양상추</button>
                 <button class="t">소스</button>
-                <button class="a">양상추</button>
+                <button class="a">버섯</button>
                 <button class="s">토마토</button>
                 <button class="d">양파</button>
                 <button class="f">피클</button>
@@ -199,6 +228,13 @@
                 <button class="x">베이컨</button>
                 <button class="c">모짜렐라치즈</button>
             </div>
+        </div>
+        <div class="end">
+            <p>
+                뷘이 만든 햄버거의 개수는<br/>
+                <span class="last"></span>개입니다😎<br/><br/>
+                다시 시작하려면 새로고침하세요.
+            </p>
         </div>
     </div>
 </body>
