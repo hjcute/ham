@@ -164,11 +164,13 @@ $(function(){
         
         $('.ham_wrap .hj_burger .heart').addClass('active');
         $('.score').text(setScore);
+        yummyPlay();
     }
 
     function hamX(){
         $('.ham_wrap .hj_burger .sad').addClass('active');
-        setTime = setTime - 3;            
+        setTime = setTime - 3;
+        aigoPlay();         
     }
 
     function gameEnd(){
@@ -176,6 +178,7 @@ $(function(){
         setScore = 0;
         $('.end .last').text($('.score').text());
         $('.end').css('display', 'flex');
+        finishPlay();
     }
 
     $('.btn_start').on('click', function(){
@@ -193,6 +196,26 @@ $(function(){
 
     function clickPlay() { 
         var audio = document.getElementById('click'); 
+        audio.currentTime=0;
+        audio.play(); 
+
+    }
+
+    function aigoPlay() { 
+        var audio = document.getElementById('aigo'); 
+        audio.currentTime=0;
+        audio.play(); 
+
+    }
+
+    function yummyPlay() { 
+        var audio = document.getElementById('yummy'); 
+        audio.currentTime=0;
+        audio.play(); 
+
+    } 
+    function finishPlay() { 
+        var audio = document.getElementById('finish'); 
         audio.currentTime=0;
         audio.play(); 
 
