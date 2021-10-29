@@ -35,7 +35,7 @@ button {
     left: 0;
     z-index: 999;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
 }
 
@@ -98,11 +98,15 @@ button {
 .ham_wrap .hj_burger .heart,
 .ham_wrap .hj_burger .sad {
     position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 55%;
+    left: 70%;
+    font-size: 40px;
     opacity: 0;
+}
+
+.ham_wrap .hj_burger .sad {
+    top: 30%;
+    left: 80%;
 }
 
 .ham_wrap .hj_burger .heart.active,
@@ -122,51 +126,6 @@ button {
     }
 }
 
-.ham_wrap .hj_burger .heart > div,
-.ham_wrap .hj_burger .sad > div {
-    position: absolute;
-    font-size: 40px;
-}
-
-.ham_wrap .hj_burger .heart > div:nth-child(1) {
-    top: 72%;
-    left: 46%;
-}
-
-.ham_wrap .hj_burger .heart > div:nth-child(2) {
-    top: 65%;
-    left: 70%;
-}
-
-.ham_wrap .hj_burger .heart > div:nth-child(3) {
-    top: 10%;
-    left: 50%;
-}
-
-.ham_wrap .hj_burger .heart > div:nth-child(4) {
-    top: 4%;
-    left: 70%;
-}
-
-.ham_wrap .hj_burger .sad > div:nth-child(1) {
-    top: 72%;
-    left: 46%;
-}
-
-.ham_wrap .hj_burger .sad > div:nth-child(2) {
-    top: 65%;
-    left: 70%;
-}
-
-.ham_wrap .hj_burger .sad > div:nth-child(3) {
-    top: 10%;
-    left: 50%;
-}
-
-.ham_wrap .hj_burger .sad > div:nth-child(4) {
-    top: 4%;
-    left: 70%;
-}
 
 .ham_wrap .hj_burger .hamburger {
     position: absolute;
@@ -181,7 +140,7 @@ button {
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 15px;
+    padding: 0 10px;
 }
 
 .ham_wrap .btn_wrap > button {
