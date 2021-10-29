@@ -26,19 +26,22 @@ $(function(){
             }else if(setScore < 5){
                 setHam = 'werta';
             }else if(setScore < 10){
-                setHam = 'wertas';
+                setHam = 'wertasd';
             }else if(setScore < 15){
-                setHam = 'wertresd';
-            }else if(setScore < 20){
                 setHam = 'wertresdf';
-            }else if(setScore < 25){
+            }else if(setScore < 20){
                 setHam = 'wertresdfg';
-            }else if(setScore < 30){
-                setHam = 'wertresdfgz';
-            }else if(setScore < 35){
-                setHam = 'wertresdfgzx';
-            }else if(setScore < 40){
+            }else if(setScore < 25){
                 setHam = 'wertresdfgzxc';
+            }else if(setScore < 30){
+                setHam = 'wertresdfgzxcv';
+                $('button.v').show();
+            }else if(setScore < 35){
+                setHam = 'wertresdfgzxcvb';
+                $('button.b').show();
+            }else if(setScore < 40){
+                setHam = 'wertresdfgzxcvbn';
+                $('button.n').show();
             }
 
             $('.ham_wrap .hj_burger .heart').removeClass('active');
@@ -52,7 +55,7 @@ $(function(){
         var hamG = setHam;
         myH = '';
         
-        for(var i=0; i<6; i++){
+        for(var i=0; i<7; i++){
             hamQ += hamG.charAt(Math.floor(Math.random()* hamG.length));
         }
 
@@ -66,7 +69,7 @@ $(function(){
     function hjBurger(h){
         var hjH = h.split('');
 
-        for(var i = 0; i < 8; i++){
+        for(var i = 0; i < 9; i++){
             $('.hj_burger .hamburger').prepend("<div class="+hjH[i]+">"+"</div>");
         }
         
@@ -77,7 +80,7 @@ $(function(){
 
     $('.btn_wrap button').on('click', function(){
 
-        if($('.bottom_wrap .hamburger > div').length < 8){
+        if($('.bottom_wrap .hamburger > div').length < 9){
             if($(this).hasClass('q')){
                 myH = myH.concat('q');
                 $('.bottom_wrap .hamburger').prepend('<div class="q"></div>');
@@ -117,6 +120,15 @@ $(function(){
             }else if($(this).hasClass('c')){
                 myH = myH.concat('c');
                 $('.bottom_wrap .hamburger').prepend('<div class="c"></div>');
+            }else if($(this).hasClass('v')){
+                myH = myH.concat('v');
+                $('.bottom_wrap .hamburger').prepend('<div class="v"></div>');
+            }else if($(this).hasClass('b')){
+                myH = myH.concat('b');
+                $('.bottom_wrap .hamburger').prepend('<div class="b"></div>');
+            }else if($(this).hasClass('n')){
+                myH = myH.concat('n');
+                $('.bottom_wrap .hamburger').prepend('<div class="n"></div>');
             }
         }else{
             alert('버거가 터지려고 합니다.');
