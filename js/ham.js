@@ -159,7 +159,7 @@ $(function(){
    
 
     function hamO(){
-        setTime = setTime + 7;
+        setTime = setTime + 6;
         setScore = setScore + 1;
         
         $('.ham_wrap .hj_burger .heart').addClass('active');
