@@ -160,6 +160,7 @@ $(function(){
 
     function hamO(){
         setTime = setTime + 6;
+
         setScore = setScore + 1;
         
         $('.ham_wrap .hj_burger .heart').addClass('active');
@@ -183,6 +184,7 @@ $(function(){
 
     $('.btn_start').on('click', function(){
         $('.start').hide();
+        $('.ham_wrap .hj_burger .hamburger').addClass('ham_start');
         randomHam();
         timeR();
     });
