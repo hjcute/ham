@@ -146,7 +146,6 @@ $(function(){
 
         $('.hamburger').html('');
         clearPlay();
-        
 
         if(hamW == myH){
             hamO();
@@ -162,6 +161,22 @@ $(function(){
         setTime = setTime + 6;
 
         setScore = setScore + 1;
+
+        if(setScore == 5) {
+            yummyPlay2();
+        }else if(setScore == 25){
+            yummyPlay2();
+        }else if(setScore == 35){
+            yummyPlay2();
+        }else if(setScore == 45){
+            yummyPlay2();
+        }else if(setScore == 55){
+            yummyPlay2();
+        }else if(setScore == 65){
+            yummyPlay2();
+        }else if(setScore == 75){
+            yummyPlay2();
+        }
         
         $('.ham_wrap .hj_burger .heart').addClass('active');
         $('.score').text(setScore);
@@ -171,7 +186,7 @@ $(function(){
     function hamX(){
         $('.ham_wrap .hj_burger .sad').addClass('active');
         setTime = setTime - 3;
-        aigoPlay();         
+        visualPlay();         
     }
 
     function gameEnd(){
@@ -203,8 +218,8 @@ $(function(){
 
     }
 
-    function aigoPlay() { 
-        var audio = document.getElementById('aigo'); 
+    function visualPlay() { 
+        var audio = document.getElementById('visual'); 
         audio.currentTime=0;
         audio.play(); 
 
@@ -215,7 +230,7 @@ $(function(){
         audio.currentTime=0;
         audio.play(); 
 
-    } 
+    }
     function finishPlay() { 
         var audio = document.getElementById('finish'); 
         audio.currentTime=0;
