@@ -107,6 +107,7 @@ button {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
+    overflow: hidden;
 }
 
 .ham_wrap .hj_burger .heart,
@@ -143,8 +144,18 @@ button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 200%);
     background-color: rgba(255,255,255,0.7);
+}
+
+.ham_wrap .hj_burger .hamburger.ham_start {
+    animation: start2 0.8s cubic-bezier(0.68,-0.55,0.27,1.55) forwards;
+}
+
+@keyframes start2 {
+    to {
+        transform: translate(-50%, -50%);
+    }    
 }
 
 
@@ -163,7 +174,13 @@ button {
     height: 40px;
     margin-bottom: 5px;
     border-radius: 3px;
+    background-color: #fff;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+}
+
+.ham_wrap .btn_wrap > button:active {
+    transform: scale(0.9);
+    background-color: #f1f1f1;
 }
 
 .ham_wrap .bottom_wrap {
@@ -275,6 +292,11 @@ button {
     background-color: #0077df;
     color: #fff;
     border-radius: 3px;
+}
+
+.ham_wrap .bottom_wrap .ok:active {
+    background-color: #046fcc;
+    transform: scale(0.9);
 }
 
 @media screen and (max-width: 700px) {
