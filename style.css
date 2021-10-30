@@ -233,6 +233,7 @@ button {
 
 .hamburger > .r {
     background-image: url(./img/burger/ham_3.png);
+    height: 15px;
 }
 
 .hamburger > .t {
@@ -241,7 +242,6 @@ button {
 
 .hamburger > .a {
     background-image: url(./img/burger/ham_11.png);
-    height: 15px;
 }
 
 .hamburger > .s {
