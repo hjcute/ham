@@ -14,12 +14,13 @@ $(function(){
         hamTimer = setInterval(function(){
             
             setTime--;
-            
-            $('.time').text(setTime);
 
             if(setTime <= 0){
                 gameEnd();
             }
+            
+            $('.time').text(setTime);
+
 
             if(setScore == 0){
                 setHam = 'wert';
@@ -28,19 +29,19 @@ $(function(){
             }else if(setScore < 10){
                 setHam = 'wertasd';
             }else if(setScore < 15){
-                setHam = 'wertresdf';
+                setHam = 'wertasdf';
             }else if(setScore < 20){
-                setHam = 'wertresdfg';
+                setHam = 'wertasdfg';
             }else if(setScore < 25){
-                setHam = 'wertresdfgzxc';
+                setHam = 'wertasdfgzxc';
             }else if(setScore < 30){
-                setHam = 'wertresdfgzxcv';
+                setHam = 'wertasdfgzxcv';
                 $('button.v').show();
             }else if(setScore < 35){
-                setHam = 'wertresdfgzxcvb';
+                setHam = 'wertasdfgzxcvb';
                 $('button.b').show();
             }else if(setScore < 40){
-                setHam = 'wertresdfgzxcvbn';
+                setHam = 'wertasdfgzxcvbn';
                 $('button.n').show();
             }
 
@@ -162,22 +163,7 @@ $(function(){
 
         setScore = setScore + 1;
 
-        if(setScore == 5) {
-            yummyPlay2();
-        }else if(setScore == 25){
-            yummyPlay2();
-        }else if(setScore == 35){
-            yummyPlay2();
-        }else if(setScore == 45){
-            yummyPlay2();
-        }else if(setScore == 55){
-            yummyPlay2();
-        }else if(setScore == 65){
-            yummyPlay2();
-        }else if(setScore == 75){
-            yummyPlay2();
-        }
-        
+                
         $('.ham_wrap .hj_burger .heart').addClass('active');
         $('.score').text(setScore);
         yummyPlay();
